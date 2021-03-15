@@ -1,7 +1,7 @@
 import pytest
 
 from weird_text.decoder import Decoder
-from weird_text.exceptions import DecodeError
+from weird_text.exceptions import DecodingException
 
 
 @pytest.fixture()
@@ -33,6 +33,6 @@ def test_whether_decoder_raise_exception_with_msg(decoder):
         "long looong sentence some test This with words"
     )
 
-    with pytest.raises(DecodeError) as e:
+    with pytest.raises(DecodingException) as e:
         decoder.decode(input_text)
         assert e == f"Can not decode given text: {input_text}"
