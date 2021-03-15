@@ -4,7 +4,7 @@ from weird_text.parser import get_list_of_words
 
 
 class Encoder:
-    def __init__(self):
+    def __init__(self) -> None:
         self._original_words = []
 
     @property

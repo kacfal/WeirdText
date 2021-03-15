@@ -3,7 +3,7 @@ from weird_text.encoder import Encoder
 
 
 class WeirdText:
-    def __init__(self):
+    def __init__(self) -> None:
         self.encoder = Encoder()
         self.decoder = Decoder()
 

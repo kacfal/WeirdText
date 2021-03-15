@@ -1,6 +1,6 @@
 import pytest
 
-from weird_text.weird_text import WeirdText
+from weird_text import WeirdText
 
 
 @pytest.fixture()
