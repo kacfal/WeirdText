@@ -1,2 +1,2 @@
-class DecodeError(Exception):
+class DecodingException(Exception):
     """ Raises when decoding failed. """

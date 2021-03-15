@@ -48,6 +48,6 @@ class WeirdText:
 
         :param text: Text encoded by method encode from WeirdText.
         :returns: Decode text.
-        :raises DecodeError when given text dose not came from method encode from WeirdText.
+        :raises DecodingException when given text dose not came from method encode from WeirdText.
         """
         return self.decoder.decode(text)

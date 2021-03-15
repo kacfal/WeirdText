@@ -1,7 +1,8 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Response
 from pydantic import BaseModel
 
 from weird_text import WeirdText
+from weird_text.exceptions import DecodingException
 
 app = FastAPI(version='v1')
 
@@ -21,3 +22,7 @@ def decode(input_text: Text):
     """ Gets encoded string text, tries decode it and returns. """
     return Text(text=WeirdText().decode(text=input_text.text))
 
+
+@app.exception_handler(DecodingException)
+async def exception_handler(request, exc):
+    return Response(str(exc), status_code=400)

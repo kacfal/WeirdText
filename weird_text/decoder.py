@@ -1,6 +1,6 @@
 from typing import Tuple
 
-from weird_text.exceptions import DecodeError
+from weird_text.exceptions import DecodingException
 from weird_text.parser import get_list_of_words
 
 
@@ -9,7 +9,7 @@ class Decoder:
         """
         Returns decoded text.
 
-        Raises DecodeError when given text can not be decoded.
+        Raises DecodingException when given text can not be decoded.
         """
         encoded_text, original_words = self._split_text(text)
 
@@ -28,5 +28,5 @@ class Decoder:
         """ Split given text and returns two strings. """
         text = text.split("\n—weird—\n")
         if len(text) != 3:
-            raise DecodeError(f"Can not decode given text: {text}")
+            raise DecodingException(f"Can not decode given text: {text}")
         return text[1], text[2]
