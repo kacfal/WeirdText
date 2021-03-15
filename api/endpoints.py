@@ -11,10 +11,13 @@ class Text(BaseModel):
 
 
 @app.post('/encode')
-def get_encode_text(input_text: Text):
+def encode(input_text: Text):
+    """ Gets string text and returns encoded string text. """
     return Text(text=WeirdText().encode(text=input_text.text))
 
 
 @app.post('/decode')
-def get_decode_text(input_text: Text):
+def decode(input_text: Text):
+    """ Gets encoded string text, tries decode it and returns. """
     return Text(text=WeirdText().decode(text=input_text.text))
+
