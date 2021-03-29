@@ -13,13 +13,13 @@ class Text(BaseModel):
 
 @app.post('/encode')
 def encode(input_text: Text):
-    """ Gets string text and returns encoded string text. """
+    """ Accepts string text and returns encoded string text. """
     return Text(text=WeirdText().encode(text=input_text.text))
 
 
 @app.post('/decode')
 def decode(input_text: Text):
-    """ Gets encoded string text, tries decode it and returns. """
+    """ Accepts encoded string text, tries decode it and returns. """
     return Text(text=WeirdText().decode(text=input_text.text))
 
 
