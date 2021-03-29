@@ -1,1 +1,1 @@
-from weird_text.weird_text import WeirdText
+from weird_text.interface import WeirdText

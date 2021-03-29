@@ -66,6 +66,6 @@ def test_whether_encode_encoding_whole_sentence(encoder):
 def test_whether_original_words_return_not_shuffled_and_sorted_words(encoder):
     input_text = "This is a long looong test sentence,\nwith some big (biiiiig) words!"
 
-    print(encoder.encode(input_text))
+    encoder.encode(input_text)
 
     assert encoder.original_words == "long looong sentence some test This with words"
